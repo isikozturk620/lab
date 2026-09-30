@@ -43,7 +43,7 @@ public class IşıkÖzturkLab2 {
             System.out.print("Passengers alighting: ");
             int numberOfAlighting = input.nextInt();
             
-            // İnnen yolcu mevcut yolcudan fazla olamaz kontrolü
+        
             while (currentPassengers < numberOfAlighting) {
                 System.out.println("----------------------------------------");
                 System.out.println("Data error at [" + stopName + "]: cannot have more passengers alighting than are currently on the bus. Occupancy set to 0.");
@@ -54,13 +54,12 @@ public class IşıkÖzturkLab2 {
             
             alightPassengers.add(numberOfAlighting);
 
-            // Mevcut yolcu sayısını güncelleme
+          
             currentPassengers = currentPassengers + numberOfBoarding - numberOfAlighting;
             currentPassengersList.add(currentPassengers);
 
             System.out.println("After " + stopName + ", number of current passengers: " + currentPassengers);
 
-            // Kapasite kontrolü
             if (currentPassengers > capacity) {
                 System.out.println("----------------------------------------");
                 System.out.println("Warning: Bus is over capacity at [" + stopName + "]");
@@ -89,7 +88,6 @@ public class IşıkÖzturkLab2 {
             System.out.println("----------------------------------------");
         }
 
-        // İstatistikler
         System.out.println("Name of stop boarding max passengers: " + stopNames.get(count));
         
         int totalPassengersAcrossStops = 0;
@@ -100,7 +98,7 @@ public class IşıkÖzturkLab2 {
         System.out.println("Average occupancy: " + average);
         System.out.println("Number of over capacity stops: " + overofcapacity);
 
-        // Son durak kontrolü (Final Occupancy)
+      
         if (currentPassengers != 0) {
             System.out.println("Warning: " + currentPassengers + " passengers still on the bus after the final stop - please check your data.");
         }
